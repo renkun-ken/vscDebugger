@@ -261,7 +261,7 @@ getCallingLineAndFile <- function(frameId = 0, skipCalls = 0) {
   options(continue = "<##v\\s\\c>\n")
   options(browserNLdisabled = TRUE)
 
-  require(pryr, quietly = TRUE, warn.conflicts = FALSE)
+  suppressPackageStartupMessages(loadNamespace("pryr"))
 
   if (overwritePrint) {
     .GlobalEnv$print <- .vsc.print
